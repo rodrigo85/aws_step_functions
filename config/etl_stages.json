@@ -1,0 +1,28 @@
+{
+    "bronze_stage": [
+        "bronze_aircrafts_data",
+        "bronze_airports_data",
+        "bronze_boarding_passes",
+        "bronze_bookings",
+        "bronze_flights",
+        "bronze_seats",
+        "bronze_ticket_flights",
+        "bronze_tickets"
+    ],
+    "dimension_stage": [
+        "dim_aircraft",
+        "dim_airport",
+        "dim_passenger",
+        "dim_seat",
+        "dim_flight_route"
+    ],
+    "fact_stage": [
+        "fact_bookings",
+        "fact_boarding_passes",
+        "fact_flight_status"
+    ],
+    "complex_transformation_stage": [
+        "dim_flight_enhanced",
+        "fact_detailed_flight_status"
+    ]
+}

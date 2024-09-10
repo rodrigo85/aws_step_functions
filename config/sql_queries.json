@@ -1,0 +1,234 @@
+{
+    "bronze_aircrafts_data": {
+        "sql_name": "bronze_aircrafts_data",
+        "sql_file": "bookings/sql_queries/bronze_aircrafts_data.sql",
+        "tables": [
+            {
+                "table_name": "aircrafts_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/aircrafts_data/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_aircrafts_data/",
+        "target_name": "aircrafts_bronze"
+    },
+    "bronze_airports_data": {
+        "sql_name": "bronze_airports_data",
+        "sql_file": "bookings/sql_queries/bronze_airports_data.sql",
+        "tables": [
+            {
+                "table_name": "airports_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/airports_data/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_airports_data/",
+        "target_name": "airports_bronze"
+    },
+    "bronze_boarding_passes": {
+        "sql_name": "bronze_boarding_passes",
+        "sql_file": "bookings/sql_queries/bronze_boarding_passes.sql",
+        "tables": [
+            {
+                "table_name": "boarding_passes_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/boarding_passes/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_boarding_passes/",
+        "target_name": "boarding_passes_bronze"
+    },
+    "bronze_bookings": {
+        "sql_name": "bronze_bookings",
+        "sql_file": "bookings/sql_queries/bronze_bookings.sql",
+        "tables": [
+            {
+                "table_name": "bookings_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/bookings/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_bookings/",
+        "target_name": "bookings_bronze"
+    },
+    "bronze_flights": {
+        "sql_name": "bronze_flights",
+        "sql_file": "bookings/sql_queries/bronze_flights.sql",
+        "tables": [
+            {
+                "table_name": "flights_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/flights/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_flights/",
+        "target_name": "flights_bronze"
+    },
+    "bronze_seats": {
+        "sql_name": "bronze_seats",
+        "sql_file": "bookings/sql_queries/bronze_seats.sql",
+        "tables": [
+            {
+                "table_name": "seats_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/seats/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_seats/",
+        "target_name": "seats_bronze"
+    },
+    "bronze_ticket_flights": {
+        "sql_name": "bronze_ticket_flights",
+        "sql_file": "bookings/sql_queries/bronze_ticket_flights.sql",
+        "tables": [
+            {
+                "table_name": "ticket_flights_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/ticket_flights/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_ticket_flights/",
+        "target_name": "ticket_flights_bronze"
+    },
+    "bronze_tickets": {
+        "sql_name": "bronze_tickets",
+        "sql_file": "bookings/sql_queries/bronze_tickets.sql",
+        "tables": [
+            {
+                "table_name": "tickets_raw",
+                "s3_path": "s3://postgres-repo/raw/bookings/tickets/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/bronze/bookings/bronze_tickets/",
+        "target_name": "tickets_bronze"
+    },
+    "dim_aircraft": {
+        "sql_name": "dim_aircraft",
+        "sql_file": "bookings/sql_queries/dim_aircraft.sql",
+        "tables": [
+            {
+                "table_name": "aircrafts_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_aircrafts_data/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/dimension_tables/dim_aircraft/",
+        "target_name": "aircrafts_gold"
+    },
+    "dim_airport": {
+        "sql_name": "dim_airport",
+        "sql_file": "bookings/sql_queries/dim_airport.sql",
+        "tables": [
+            {
+                "table_name": "airports_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_airports_data/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/dimension_tables/dim_airport/",
+        "target_name": "airports_gold"
+    },
+    "dim_passenger": {
+        "sql_name": "dim_passenger",
+        "sql_file": "bookings/sql_queries/dim_passenger.sql",
+        "tables": [
+            {
+                "table_name": "tickets_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_tickets/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/dimension_tables/dim_passenger/",
+        "target_name": "passengers_gold"
+    },
+    "dim_seat": {
+        "sql_name": "dim_seat",
+        "sql_file": "bookings/sql_queries/dim_seat.sql",
+        "tables": [
+            {
+                "table_name": "seats_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_seats/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/dimension_tables/dim_seat/",
+        "target_name": "seats_gold"
+    },
+    "dim_flight_route": {
+        "sql_name": "dim_flight_route",
+        "sql_file": "bookings/sql_queries/dim_flight_route.sql",
+        "tables": [
+            {
+                "table_name": "flights_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_flights/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/dimension_tables/dim_flight_route/",
+        "target_name": "flight_routes_gold"
+    },
+    "dim_flight_enhanced": {
+        "sql_name": "dim_flight_enhanced",
+        "sql_file": "bookings/sql_queries/dim_flight_enhanced.sql",
+        "tables": [
+            {
+                "table_name": "flights_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_flights/"
+            },
+            {
+                "table_name": "airports_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_airports_data/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/dimension_tables/dim_flight_enhanced/",
+        "target_name": "flights_enhanced_gold"
+    },
+    "fact_bookings": {
+        "sql_name": "fact_bookings",
+        "sql_file": "bookings/sql_queries/fact_bookings.sql",
+        "tables": [
+            {
+                "table_name": "bookings_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_bookings/"
+            },
+            {
+                "table_name": "tickets_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_tickets/"
+            },
+            {
+                "table_name": "ticket_flights_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_ticket_flights/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/fact_tables/fact_bookings/",
+        "target_name": "bookings_gold"
+    },
+    "fact_boarding_passes": {
+        "sql_name": "fact_boarding_passes",
+        "sql_file": "bookings/sql_queries/fact_boarding_passes.sql",
+        "tables": [
+            {
+                "table_name": "boarding_passes_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_boarding_passes/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/fact_tables/fact_boarding_passes/",
+        "target_name": "boarding_passes_gold"
+    },
+    "fact_flight_status": {
+        "sql_name": "fact_flight_status",
+        "sql_file": "bookings/sql_queries/fact_flight_status.sql",
+        "tables": [
+            {
+                "table_name": "flights_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_flights/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/fact_tables/fact_flight_status/",
+        "target_name": "flight_status_gold"
+    },
+    "fact_detailed_flight_status": {
+        "sql_name": "fact_detailed_flight_status",
+        "sql_file": "bookings/sql_queries/fact_detailed_flight_status.sql",
+        "tables": [
+            {
+                "table_name": "flights_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_flights/"
+            },
+            {
+                "table_name": "airports_bronze",
+                "s3_path": "s3://postgres-repo/bronze/bookings/bronze_airports_data/"
+            }
+        ],
+        "s3_target": "s3://postgres-repo/gold/bookings/fact_tables/fact_detailed_flight_status/",
+        "target_name": "detailed_flight_status_gold"
+    }
+}
