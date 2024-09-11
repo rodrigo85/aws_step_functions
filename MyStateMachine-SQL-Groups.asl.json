@@ -1,0 +1,48 @@
+{
+  "StartAt": "ReadSetup",
+  "States": {
+    "ReadSetup": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:sa-east-1:343617587099:function:read_setup",
+      "Next": "Bronze_stage"
+    },
+    "Bronze_stage": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "booking_job",
+        "Arguments": {
+          "--group_list.$": "States.JsonToString($.group_1)"
+        }
+      },
+      "ResultPath": "$.job1Result",
+      "Next": "DIM_stage"
+    },
+    "DIM_stage": {
+      "Type": "Task",
+      "InputPath": "$",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "booking_job",
+        "Arguments": {
+          "--group_list.$": "States.JsonToString($.group_2)"
+        }
+      },
+      "ResultPath": "$.job2Result",
+      "Next": "Gold_stage"
+    },
+    "Gold_stage": {
+      "Type": "Task",
+      "InputPath": "$",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "booking_job",
+        "Arguments": {
+          "--group_list.$": "States.JsonToString($.group_3)"
+        }
+      },
+      "ResultPath": "$.job3Result",
+      "End": true
+    }
+  }
+}
