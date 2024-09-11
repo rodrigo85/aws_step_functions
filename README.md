@@ -6,7 +6,6 @@ This project demonstrates the implementation of an AWS Step Function workflow th
 - [JSON Setup](#json-setup)
 - [Explanation of Each JSON Property](#explanation-of-each-json-property)
 - [Glue Job Processing](#glue-job-processing)
-- [Why Use Temporary Views?](#why-use-temporary-views)
 - [Step Function for SQL Execution](#step-function-for-sql-execution)
 - [Validation and Test Evidence](#validation-and-test-evidence)
   - [Step Function Success](#step-function-success)
