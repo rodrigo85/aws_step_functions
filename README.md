@@ -8,6 +8,7 @@ This project demonstrates the implementation of an AWS Step Function workflow th
 - ![AWS Lambda](https://img.shields.io/badge/-AWS%20Lambda-FF9900?logo=awslambda&logoColor=white) **AWS Lambda**: Runs small pieces of code to set up data and trigger jobs in the pipeline.
 - ![AWS Glue](https://img.shields.io/badge/-AWS%20Glue-232F3E?logo=amazonaws&logoColor=white) **AWS Glue**: Processes the data with PySpark, transforming it and saving it for analysis.
 - ![Amazon S3](https://img.shields.io/badge/-Amazon%20S3-FF9900?logo=amazons3&logoColor=white) **Amazon S3**: Stores all data files, including raw, processed, and final output data for easy access.
+- ![AWS Glue Crawlers](https://img.shields.io/badge/-AWS%20Glue%20Crawlers-232F3E?logo=amazonaws&logoColor=white) **AWS Glue Crawlers**: Automatically scan and catalog data in S3, making it ready for querying and analysis.
 - ![Amazon Athena](https://img.shields.io/badge/-Amazon%20Athena-1E56A0?logo=amazonaws&logoColor=white) **Amazon Athena**: Allows running SQL queries on the processed data, making it easy to analyze results directly in the cloud.
 
 
