@@ -2,6 +2,15 @@
 
 This project demonstrates the implementation of an AWS Step Function workflow that orchestrates a series of data processing tasks across multiple stages (Bronze, Dimension, Fact, and Complex Transformation). The workflow leverages AWS Lambda and Glue to handle orchestration and data transformation using PySpark.
 
+#### 🛠️ Tools & Technologies
+
+- ![AWS Step Functions](https://img.shields.io/badge/-AWS%20Step%20Functions-FF9900?logo=amazonaws&logoColor=white) **AWS Step Functions**: Orchestrates the whole data pipeline, making sure each step happens in the right order.
+- ![AWS Lambda](https://img.shields.io/badge/-AWS%20Lambda-FF9900?logo=awslambda&logoColor=white) **AWS Lambda**: Runs small pieces of code to set up data and trigger jobs in the pipeline.
+- ![AWS Glue](https://img.shields.io/badge/-AWS%20Glue-232F3E?logo=amazonaws&logoColor=white) **AWS Glue**: Processes the data with PySpark, transforming it and saving it for analysis.
+- ![Amazon S3](https://img.shields.io/badge/-Amazon%20S3-FF9900?logo=amazons3&logoColor=white) **Amazon S3**: Stores all data files, including raw, processed, and final output data for easy access.
+- ![Amazon Athena](https://img.shields.io/badge/-Amazon%20Athena-1E56A0?logo=amazonaws&logoColor=white) **Amazon Athena**: Allows running SQL queries on the processed data, making it easy to analyze results directly in the cloud.
+
+
 ### Table of Contents 📚
 - [JSON Setup](#json-setup)
 - [Explanation of Each JSON Property](#explanation-of-each-json-property)
